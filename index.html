@@ -291,25 +291,6 @@
   </div>
 </section>
 
-<!-- RUNNING CAROUSEL -->
-<section class="marquee" aria-label="Moments from the journey">
-  <div class="belt">
-      <img src="img/g10.jpg" alt="Family reading a letter facing the Old City">
-      <img src="img/g11.jpg" alt="Father and daughter riding across the suspension bridge">
-      <img src="img/n4.jpg" alt="Mother and daughter under the colorful umbrellas">
-      <img src="img/g06.jpg" alt="Father and daughter at Absalom's Tomb">
-      <img src="img/g05.jpg" alt="Family at the Yemin Moshe windmill">
-      <img src="img/n1.jpg" alt="Father and daughter praying at the Little Western Wall">
-      <img src="img/g12.jpg" alt="Mother and son on the lit bridge at dusk">
-      <img src="img/s3.jpg" alt="Father and son facing the Dome of the Rock">
-      <img src="img/g07.jpg" alt="Father and son reading a letter at sunset">
-      <img src="img/n3.jpg" alt="Family at the Knesset Menorah">
-      <img src="img/g02.jpg" alt="Father and son at a sunset viewpoint">
-      <img src="img/g08.jpg" alt="Mother and daughter riding a garden path">
-      <img src="img/g09.jpg" alt="Family walking bikes through stone arches">
-      <img src="img/s2.jpg" alt="Mother and daughter above the Old City">
-  </div>
-</section>
 
 <!-- FINAL -->
 <section class="final" id="plan">
@@ -367,21 +348,6 @@
     slides[i].classList.remove("on"); i = (i + 1) % slides.length; slides[i].classList.add("on");
   }, 6000);
 
-  // running carousel: moves on its own, and can be swiped or dragged at any time
-  const belt = document.querySelector(".belt");
-  belt.innerHTML += belt.innerHTML.replace(/<img /g, '<img aria-hidden="true" ');
-  let idle = 0, dragging = false, startX = 0, startLeft = 0, pos = 0;
-  const half = () => belt.scrollWidth / 2;
-  const touch = () => { idle = performance.now() + 2500; };
-  ["touchstart", "wheel", "keydown"].forEach(ev => belt.addEventListener(ev, touch, { passive: true }));
-  belt.addEventListener("scroll", () => { if (belt.scrollLeft >= half()) belt.scrollLeft -= half(); if (belt.scrollLeft <= 0 && dragging) belt.scrollLeft += half(); });
-  belt.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; dragging = true; startX = e.clientX; startLeft = belt.scrollLeft; belt.classList.add("drag"); touch(); });
-  addEventListener("pointermove", e => { if (!dragging) return; belt.scrollLeft = startLeft - (e.clientX - startX); touch(); });
-  addEventListener("pointerup", () => { dragging = false; belt.classList.remove("drag"); });
-  (function tick(t) {
-    if (t > idle && !dragging) { pos = (pos || belt.scrollLeft) + 0.6; if (pos >= half()) pos -= half(); belt.scrollLeft = pos; } else pos = belt.scrollLeft;
-    requestAnimationFrame(tick);
-  })(0);
 
   // sparkles
   document.querySelectorAll(".sparkles").forEach(s => {
