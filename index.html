@@ -185,6 +185,29 @@
   .js .reveal{opacity:1;transform:none;transition:opacity 1s ease,transform 1s ease}
   .js .reveal.in{opacity:1;transform:none}
 
+
+  /* video */
+  .film{margin:40px auto 0;max-width:340px}
+  .film video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:var(--night);box-shadow:0 24px 60px rgba(28,34,54,.28)}
+
+  /* desktop */
+  @media (min-width:900px){
+    .hero{background:radial-gradient(90% 90% at 25% 50%,#1a2b52 0%,var(--night) 75%)}
+    .hero .slides{inset:0;inset-inline-start:auto;width:46%}
+    .hero .slides img{object-position:50% 70%}
+    .hero::after{background:linear-gradient(90deg,var(--night) 54%,rgba(11,20,40,.55) 58%,rgba(11,20,40,0) 68%)}
+    [dir=rtl] .hero::after{background:linear-gradient(270deg,var(--night) 54%,rgba(11,20,40,.55) 58%,rgba(11,20,40,0) 68%)}
+    .hero .wrap{max-width:none;width:54%;margin:0;padding:28px 56px 40px}
+    .hero-body{margin:auto 0}
+    .hebrew{left:27%;top:50%;font-size:clamp(110px,16vw,240px)}
+    [dir=rtl] .hebrew{left:73%}
+    .page .block.split{max-width:1040px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:64px;align-items:center;text-align:start}
+    .split .sitelist{margin-inline:0}
+    .split .lead3{margin-inline:0}
+    .split .film{margin:0}
+    .page .wrap.block:has(.list){max-width:1040px}
+    .page .list{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+  }
   @media (min-width:860px){.track{padding-inline:max(22px,calc((100vw - 760px)/2 + 22px))}}
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -225,7 +248,8 @@
     <p data-i18n="k7" class="lead3">A parent and child, or both parents with their son or daughter. Before the party, before the speeches, there is a ride: your child takes the lead through the stone streets of Jerusalem, and at the most beautiful viewpoint in the city, you read each other a letter.</p>
   </div>
 
-  <div class="wrap reveal block">
+  <div class="wrap reveal block split">
+    <div class="split-text">
     <p data-i18n="k8" class="eyebrow dk">✦ The secret of the bike ✦</p>
     <h2 data-i18n="k9">See More of Jerusalem<br><span class="accent dk">in a Few Hours</span></h2>
     <p data-i18n="k10" class="lead3">On foot, these places take days and a lot of tired feet. On a bike, the whole city opens up in just a few hours, morning or afternoon, at an easy pace, with time to stop at every view.</p>
@@ -240,6 +264,10 @@
       <li>The colorful streets of downtown</li>
     </ul>
     <p data-i18n="k12" class="small2">Every route is designed for your family, so the stops change from journey to journey.</p>
+    </div>
+    <figure class="film">
+      <video src="vid/ride.mp4" poster="vid/poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A family riding through Jerusalem"></video>
+    </figure>
   </div>
 
   <div class="wrap reveal block">
