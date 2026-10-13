@@ -32,6 +32,7 @@
   .eyebrow{margin-top:22px;font:700 13px var(--display);letter-spacing:.22em;color:var(--gold-2);text-transform:uppercase}
   h1{font:700 clamp(36px,10vw,50px)/1.08 var(--display);margin-top:8px;text-wrap:balance}
   .role{font:italic 500 clamp(21px,5.6vw,25px)/1.4 var(--serif);color:var(--cream);margin-top:10px;text-wrap:balance}
+  .bio p+p{margin-top:14px}
   .bio{margin-top:30px;font:500 clamp(19px,5vw,22px)/1.6 var(--serif);color:var(--cream);text-align:center}
   h2{margin-top:40px;font:700 13px var(--display);letter-spacing:.22em;color:var(--gold-2);text-transform:uppercase;text-align:center}
   .rides{list-style:none;margin-top:14px;border-top:1px solid var(--line)}
@@ -67,12 +68,12 @@
     <img src="img/dina.jpg" alt="Dina Gabai with her bike helmet at sunset">
     <p class="eyebrow" data-i18n="eb">Your guide</p>
     <h1 data-i18n="name">Dina Gabai</h1>
-    <p class="role" data-i18n="role">Licensed Israeli tour guide &amp; mountain-bike instructor</p>
+    <p class="role" data-i18n="role">Licensed Israeli tour guide, mountain biking instructor &amp; founder of Dinamo Cycling Club</p>
   </section>
 
-  <p class="bio" data-i18n="bio">I create concept rides: each ride is built around one idea, one story and one place. Every week I'm out on the trails with children and teens, and I know the paths of Jerusalem and the Judean hills by heart.</p>
+  <div class="bio" data-i18n="bio"><p>Hi, I'm Dina Gabai, a licensed Israeli tour guide, mountain biking instructor, and founder of Dinamo Cycling Club.</p><p>I create and lead themed cycling tours that bring together local stories, beautiful landscapes, and encounters with local people, with a special connection to Jerusalem and the Judean Desert. I bring in-depth knowledge of the area, personal attention, and a love of people to every tour, creating experiences that stay with you long after you return home.</p></div>
 
-  <h2 data-i18n="h2">Concept rides</h2>
+  <h2 data-i18n="h2">Themed cycling tours</h2>
   <ul class="rides" data-i18n="rides">
     <li><b>Ride Into Jerusalem</b><span>A Bar &amp; Bat Mitzvah journey for parent and child, with letters read at the viewpoint</span></li>
     <li><b>Jerusalem at night</b><span>Old City gates, stone alleys and stairs, by bike after dark</span></li>
@@ -95,9 +96,9 @@
   const HE = {
     eb: "המדריכה שלכם",
     name: "דינה גבאי",
-    role: "מורת דרך מוסמכת ומדריכת רכיבת הרים",
-    bio: "אני יוצרת רכיבות קונספט: כל רכיבה נבנית סביב רעיון אחד, סיפור אחד ומקום אחד. כל שבוע אני בשטח עם ילדים ובני נוער, ומכירה לעומק את השבילים של ירושלים והרי יהודה.",
-    h2: "רכיבות קונספט",
+    role: "מורת דרך מוסמכת, מדריכת אופני הרים ומייסדת מועדון הרכיבה דינמו",
+    bio: "<p>נעים להכיר, אני דינה גבאי, מורת דרך מוסמכת, מדריכת אופני הרים ומייסדת מועדון הרכיבה דינמו.</p><p>אני יוצרת ומובילה טיולי קונספט שמשלבים רכיבה, סיפורים, נופים ומפגשים מקומיים, עם חיבור מיוחד לירושלים ולמדבר יהודה. בכל טיול אני מביאה היכרות עמוקה עם השטח, יחס אישי ואהבה לאנשים, כדי ליצור חוויה שנשארת גם אחרי שחוזרים הביתה.</p>",
+    h2: "טיולי קונספט",
     rides: "<li><b>רוכבים אל ירושלים</b><span>מסע בר ובת מצווה להורה וילד, עם מכתבים שנקראים בתצפית</span></li><li><b>ירושלים בלילה</b><span>שערי העיר העתיקה, סמטאות האבן והמדרגות, על אופניים אחרי החשכה</span></li><li><b>רכיבות זריחה</b><span>יוצאים בחושך ומגיעים לתצפית בדיוק כשהשמש עולה</span></li><li><b>כרמי שפלת יהודה</b><span>רכיבה בין יקבים ומעיינות בעמק האלה ובגוש עציון</span></li><li><b>חוצים את מדבר יהודה</b><span>רכיבה משולי ירושלים ועד המצוקים שמעל ים המלח</span></li>",
     cta: "לכתוב לי בוואטסאפ",
     more: "למסע הבר ובת מצווה ←"
